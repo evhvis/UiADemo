@@ -1,0 +1,8 @@
+.employee-form-part {
+  flex: 33%;
+}
+
+.employee-form {
+  display: flex;
+}
+

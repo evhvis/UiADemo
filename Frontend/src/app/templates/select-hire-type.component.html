@@ -1,0 +1,14 @@
+<select >
+  <option *ngFor="let hireType of hireTypes" [ngValue]="hireType.value">
+    {{ hireType.viewValue }}
+  </option>
+</select>
+
+      <div class="form-group">
+        <label for="hireType">Ansettelsestype</label>
+        <select id="hireType">
+          <option *ngFor="let hireType of hireTypes" [(ngModel)]="employee.hireType">
+            {{ hireType.viewValue }}
+          </option>
+        </select>
+      </div>

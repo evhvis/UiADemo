@@ -1,0 +1,53 @@
+.forest-background {
+  background-color: #4B6455;
+}
+
+.pear-background {
+  background-color: #B7DEBD;
+}
+
+.digital-black {
+  color: #333333;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.pad-1 {
+  padding: 1rem;
+}
+
+.right {
+  float: right;
+}
+
+.default-h2 {
+  text-align: center;
+  color: #333333;
+  padding-bottom: 0.5em;
+}
+
+.default-h3 {
+  text-align: center;
+  color: #333333;
+  padding-bottom: 0.5em;
+}
+
+.thead-forest {
+  background-color: #4B6455;
+  color: #F1F0ED;
+}
+
+.margin-0-5 {
+  margin: 0.5rem;
+}
+
+.right {
+  float: right;
+}
+
+.padding-div {
+  padding-bottom: 50px;
+}
+

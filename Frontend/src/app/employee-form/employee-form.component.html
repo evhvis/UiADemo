@@ -1,0 +1,66 @@
+<div class="card my-5">
+  <div class="card-body">
+    <h2 class="default-h2">Legg til ansatt</h2>
+    <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+      <div class="form-group">
+        <label for="employeeFirstName">Fornavn</label>
+        <input type="text" [(ngModel)]="employee.firstName"
+               class="form-control"
+               id="employeeFirstName"
+               name="firstName"
+               placeholder="Skriv inn fornavn"
+               required #firstName="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="employeelastName">Etternavn</label>
+        <input type="text" [(ngModel)]="employee.lastName"
+               class="form-control"
+               id="employeelastName"
+               name="lastName"
+               placeholder="Skriv inn etternavn"
+               required #lastName="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="birthday">Fødeslsdato</label>
+        <input type="text" [(ngModel)]="employee.birthday"
+               class="form-control"
+               id="birthday"
+               name="birthday"
+               placeholder="yyyy-mm-dd"
+               required #birthday="ngModel"
+               pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+       <div [hidden]="birthday.valid" class="alert">Fødselsdato format yyyy-mm-dd</div>
+      </div>
+
+      <div class="form-group">
+        <label for="workingRole">Ansettelsestype</label>
+        <select type="select" [(ngModel)]="employee.hireType"
+                class="form-control"
+                name="workingRole"
+                id="workingRole"
+                required #workingRole="ngModel">
+          <option *ngFor="let hireType of hireTypes" [ngValue]="hireType.value">
+            {{ hireType.viewValue }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="functionRole">Stilling/Funksjon</label>
+        <select type="select" [(ngModel)]="employee.workingRole"
+                class="form-control"
+                name="functionRole"
+                id="functionRole"
+                required #functionRole="ngModel">
+          <option *ngFor="let workingRole of workingRoles" [ngValue]="workingRole.value">
+            {{ workingRole.viewValue }}
+          </option>
+        </select>
+      </div>
+      <button type="submit" [disabled]="!employeeForm.form.valid"
+              class="btn btn-info pear-background digital-black bold margin-0-5 ">Submit
+      </button>
+    </form>
+    <span style="color:red">{{ warningMessage }}</span>
+  </div>
+</div>

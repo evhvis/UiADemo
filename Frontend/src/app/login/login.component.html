@@ -1,0 +1,28 @@
+<div class="card my-5">
+  <div class="card-body">
+    <h3 class="digital-black">Innlogging</h3>
+    <form (ngSubmit)="onAuthenticate()" #loginForm="ngForm">
+      <div class="form-group">
+        <label for="username">Brukernavn</label>
+        <input type="text" [(ngModel)]="loginModel.username"
+               class="form-control"
+               id="username"
+               name="username"
+               placeholder="Enter your user name"
+               required #username="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="password">Passord</label>
+        <input type="password" [(ngModel)]="loginModel.password"
+               class="form-control"
+               id="password"
+               name="password"
+               placeholder="Enter your password"
+               required #password="ngModel">
+      </div>
+      <button type="submit" [disabled]="!loginForm.form.valid"
+              class="btn btn-info pear-background digital-black bold margin-0-5">Submit</button>
+              <span style="color:red" *ngIf="loginFailed">{{loginFailed}}</span>
+    </form>
+  </div>
+</div>
